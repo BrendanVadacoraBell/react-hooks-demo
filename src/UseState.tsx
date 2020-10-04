@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {View, Text, Button} from 'react-native';
 
 const INITIAL_COUNT = 0;
 
 export default function UseState() {
-  useEffect(() => {
+  React.useEffect(() => {
     console.log('UseState render');
   })
   

@@ -3,11 +3,13 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import UseState from './src/UseState';
+import UseEffect from './src/UseEffect';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <UseState/>
+      {/* <UseState/> */}
+      <UseEffect/>
       <StatusBar style="auto" />
     </View>
   );
