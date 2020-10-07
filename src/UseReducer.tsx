@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 
+import {useRenderLogger} from './customHooks';
+
 const DAY = 'Tuesday';
 const COUNT = 2;
 const NAME = 'Gary';
@@ -57,9 +59,7 @@ export default function UseReducer() {
   the objects themselves are not equal.
   Notice how returning the same state in the default reducer does not trigger this.
   */
-  React.useEffect(() => {
-    console.log('UseReducer render', state);
-  }, [state])
+  useRenderLogger('UseReducer', [state]);
 
   const onIncrementPress = () => {
     dispatch({type: 'increment'});

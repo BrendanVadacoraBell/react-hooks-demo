@@ -11,8 +11,8 @@ import UseReducer from './src/UseReducer';
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <UseState/> */}
-      <UseReducer />
+      <UseState/>
+      {/* <UseReducer /> */}
       {/* <UseEffect/> */}
       {/* <UseMemo/> */}
       {/* <UseCallback /> */}

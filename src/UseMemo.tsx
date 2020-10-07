@@ -1,5 +1,6 @@
 import React, {ReactNode} from 'react';
 import {View, Text, StyleSheet, Button, StyleProp, TextStyle} from 'react-native';
+import { useRenderLogger } from './customHooks';
 
 const styles = StyleSheet.create({
   rightAlignedText: {
@@ -19,9 +20,7 @@ type TextWrapper = {
 }
 
 function TextWrapper({style, children}: TextWrapper) {
-  React.useEffect(() => {
-    console.log('TextWrapper render', children);
-  }, [style, children])
+  useRenderLogger('TextWrapper', [children, style]);
 
   return (
     <Text style={style}>{children}</Text>
@@ -29,9 +28,7 @@ function TextWrapper({style, children}: TextWrapper) {
 }
 
 export default function UseMemo() {
-  React.useEffect(() => {
-    console.log('UseMemo render');
-  })
+  useRenderLogger('UseMemo');
 
   // The purpose of this flag is to enqueue a render cycle
   const [_, setSomeFlag] = React.useState(false);

@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Button} from 'react-native';
+import { useRenderLogger } from './customHooks';
 
 type ButtonWrapper = {
   title: string;
@@ -7,10 +8,7 @@ type ButtonWrapper = {
 }
 
 function ButtonWrapper({title, onPress}: ButtonWrapper) {
-  React.useEffect(() => {
-    console.log('Button wrapper render', title, onPress);
-  }, [title, onPress])
-
+  useRenderLogger('Button wrapper', [title, onPress]);
 
   return (
     <Button
@@ -21,9 +19,7 @@ function ButtonWrapper({title, onPress}: ButtonWrapper) {
 }
 
 export default function UseCallback() {
-  React.useEffect(() => {
-    console.log('UseCallback render');
-  });
+  useRenderLogger('UseCallback');
 
 
   // This is used to force a render

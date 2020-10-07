@@ -1,10 +1,9 @@
 import React from 'react';
 import {View, Text, AppState, AppStateStatus} from 'react-native';
+import { useRenderLogger } from './customHooks';
 
 export default function UseEffect() {
-  React.useEffect(() => {
-    console.log('UseEffect render');
-  })
+  useRenderLogger('UseEffect');
 
   const [appState, setAppState] = React.useState<string>(AppState.currentState);
 
