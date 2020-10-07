@@ -6,14 +6,16 @@ import UseState from './src/UseState';
 import UseEffect from './src/UseEffect';
 import UseMemo from './src/UseMemo';
 import UseCallback from './src/UseCallback';
+import UseReducer from './src/UseReducer';
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <UseState/> */}
+      <UseReducer />
       {/* <UseEffect/> */}
       {/* <UseMemo/> */}
-      <UseCallback />
+      {/* <UseCallback /> */}
       <StatusBar style="auto" />
     </View>
   );
